@@ -199,7 +199,7 @@ u0_a131      20839   433 7 18:18:44 ?     00:00:02 com.xiaomi.athena_remocons
 gtowifi:/ # logcat --pid 21131                                                                                                                                                                       
 --------- beginning of main
 07-30 18:20:09.481 21131 21131 E athena_remocon: Not starting debugger since process cannot load the jdwp agent.
-...
+```
 
 The app leaves a GRPC port open for remote control 
 
