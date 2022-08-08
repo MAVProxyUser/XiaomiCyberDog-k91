@@ -12,6 +12,13 @@
 * [STP file for accessory mounting](#stp-file-for-accessory-mounting)
 * [GRPC remote control](#grpc-remote-control)
 * [Wav files for dog sound effects](#wav-files-for-dog-sound-effects)
+* [Bluetooth remote support](#bluetooth-remote-support)
+   * [Usage](#usage)
+   * [Services on dog for control](#services-on-dog-for-control)
+* [Android App](#android-app)
+   * [Tina Linux (Neptune, 5C1C9C53)](#tina-linux-neptune-5c1c9c53)
+   * [请输入help指令,获取系统帮助](#请输入help指令获取系统帮助)
+   * [please enter the help command to get system help](#please-enter-the-help-command-to-get-system-help)
 
 The smart robot dog has become a reality. With the new device by Xiaomi, everyone can have such an electronic pet.<br>
 https://xiaomi-mi.com/appliances/yi-home-camera-3/<br>
