@@ -257,8 +257,8 @@ tcp6       0      0 ::ffff:10.0.0.64:8980   ::ffff:10.0.0.65:44306  ESTABLISHED 
 
 ```
 
-Files left in files/mmkv/spUtils seemingly ties the current dog mode and settings to a Xiaomi account session 
-
+Files left in /data/data/com.xiaomi.athena_remocons/files/mmkv/spUtils seemingly ties the current dog mode and settings to a Xiaomi account session 
+/data/data/com.xiaomi.athena_remocons/files/mmkv/<serialnumber> seems to tie the serial to the dogs settings, including the "room map"  
 
 # Passwords and systems
 
