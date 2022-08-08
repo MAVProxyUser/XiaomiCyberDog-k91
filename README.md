@@ -23,7 +23,7 @@ https://xiaomi-mi.com/appliances/yi-home-camera-3/<br>
 https://www.mi.com/shop/buy/detail?product_id=14815<br>
 
 # Archived Xiaomi CyberDog GitLab Project
-https://www.ithome.com/0/602/684.htm<br>
+https://partner-gitlab.mioffice.cn/groups/cyberdog/-/archived<br>
 
 # Active GitHub Project 
 https://github.com/MiRoboticsLab/cyberdog_ros2<br>
