@@ -86,6 +86,54 @@ dnn_we_model_path = /opt/ros2/cyberdog/ai_conf/dnn_we_model;
 
 hot_query_robotcontroller.txt contains the gramatical structure for the recognized voice commands.<br>
 
+If you split each line in the file by ":" you can get an idea of the voice commands. They line up with what is in the manual
+
+```
+(^(旺财旺财|请|麻烦|给我)?(站)?起来(啊)?$|^(给我)?起立$)	旺财，旺财，站起来	robotControl	"resp"
+
+^(请|旺财|麻烦|给我|表演一下)?趴下去(旺财)?$	旺财，旺财，趴下去	robotControl	"resp"
+
+^(旺财|麻烦|给我)?(过来)?过来$	旺财，旺财，过来过来	robotControl	"resp"
+
+^(旺财|麻烦|请|给我)?后退一步$	旺财，旺财，后退一步	robotControl	"resp"
+
+^(旺财来|麻烦|请|给我|表扬一下)?原地转圈$	旺财，旺财，原地转圈	robotControl	"resp"
+
+(^(旺财来|麻烦|给我|表演一下|请)?(握个手|击个掌)$|^击个掌吧击个掌$)	旺财，旺财，握个手/击个掌	robotControl	"resp"
+
+^(旺财来|麻烦|请|给我|表演一下)?后空翻$	旺财，旺财，后空翻	robotControl	"resp"
+
+^(旺财来)?(麻烦|请|给我|表演一下)?跳个舞(吧|呗)?$	旺财，旺财，跳个舞	robotControl	"resp"
+```
+
+The rough English translation is below:<br>
+
+```
+(^(Wang Cai Wang Cai|Please|Trouble|Give me)?(Stand)?Get up(Ah)?$|^(Give me)?Stand up $) Prosperity, Prosperity, stand up robotControl "resp"
+
+^(Please|prosperity|trouble|give me|perform)? Get down (prosperity)?$ Prosperity, prosperous, get down robotControl "resp"
+
+^(Wangcai|Trouble|Give me)?(Come over)?Come over $ Wangcai,Wangcai, come here robotControl "resp"
+
+^(Wangcai|trouble|please|give me)? One step back $ Wangcai, Wangcai, one step back robotControl "resp"
+
+^(Wangcailai|trouble|please|give me|praise)? Circling in place $ Prosperity, prosperity, circling robotControl "resp"
+
+(^(Prosperity Come|Trouble|Give me|Show me|Please)?(Shake a hand|Clap)$|^Clap, give a slap$) Prosperity, prosperity, shake hands/hit A palm robotControl "resp"
+
+^(Wangcailai|trouble|please|give me|show it)? Backflip $ Prosperity, Prosperity, Backflip robotControl "resp"
+
+^(Prosperity is coming)?(Trouble|please|show me|perform)? Dance (bar|chan)?$ Prosperity, prosperity, dance robotControl "resp"
+```
+
+"Wang Cai" is supposed to be "Iron Egg" which you can tell from the "CyberDog voice commands" section of the manual. 
+
+Wake word: "iron egg iron egg"
+instruction: "take a step back", "stand up", "get down", "dance", "shake hands", "turn around"
+
+The "backflip" instruction seems to be disabled, even though shown in marketing.<br>
+https://www.youtube.com/watch?v=Jj95byxQCeU 
+
 This non CyberDog specific discussion on adding custom Xiaomi wakeup words has some overlap with the above info<br>
 https://bbs.hassbian.com/archiver/?tid-5649.html&page=1
 
