@@ -204,5 +204,56 @@ tcp6       0      0 ::ffff:10.0.0.64:8980   ::ffff:10.0.0.65:44306  ESTABLISHED 
 Files left in files/mmkv/spUtils seemingly ties the current dog mode and settings to a Xiaomi account session 
 
 
+# Passwords and systems
 
+Tegra: pi / 123
+       root / 123
+
+```
+Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.9.201-tegra aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+
+367 packages can be updated.
+305 of these updates are security updates.
+To see these additional updates run: apt list --upgradable
+
+Your Hardware Enablement Stack (HWE) is supported until April 2023.
+
+```
+
+
+Tina: root / no pass
+```
+mi@lubuntu:~$ ssh root@192.168.55.233
+Warning: Permanently added '192.168.55.233' (RSA) to the list of known hosts.
+
+
+BusyBox v1.27.2 () built-in shell (ash)
+
+ _____  _              __     _
+|_   _||_| ___  _ _   |  |   |_| ___  _ _  _ _
+  | |   _ |   ||   |  |  |__ | ||   || | ||_'_|
+  | |  | || | || _ |  |_____||_||_|_||___||_,_|
+  |_|  |_||_|_||_|_|  Tina is Based on OpenWrt!
+ ------------------------------------------------
+ Tina Linux (Neptune, 5C1C9C53)
+ ------------------------------------------------
+ 请输入help指令,获取系统帮助
+ ------------------------------------------------
+ please enter the help command to get system help
+ ------------------------------------------------
+root@TinaLinux:~#
+```
 
