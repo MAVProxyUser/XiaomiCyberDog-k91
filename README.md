@@ -112,6 +112,7 @@ gait range: 1~4, 7~11, when ch6 pressed
 ```
 https://github.com/MiRoboticsLab/cyberdog_ros2/blob/main/cyberdog_interaction/cyberdog_wireless/bluetooth/bluetooth/remote.py
 
+```
 -------------------------------------
 Roller - Ch8 (height)
 -------------------------------------
@@ -127,6 +128,7 @@ Up          | Center       | Bound
 Up          | Down         | Recover
 Up          | Up           | Show Atti
 --------------------------------------
+```
 
 ## Services on dog for control 
 
