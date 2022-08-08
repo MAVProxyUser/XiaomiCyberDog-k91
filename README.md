@@ -202,6 +202,7 @@ gtowifi:/ # logcat --pid 21131
 ...
 
 The app leaves a GRPC port open for remote control 
+
 ```
 gtowifi:/data/user/0/com.xiaomi.athena_remocons # netstat -anp  | grep athen                                                                       
 tcp        0      0 10.0.0.64:46038         10.0.0.65:1935          ESTABLISHED 21131/com.xiaomi.athena_remocons
@@ -244,6 +245,7 @@ Your Hardware Enablement Stack (HWE) is supported until April 2023.
 
 
 Tina: root / no pass
+
 ```
 mi@lubuntu:~$ ssh root@192.168.55.233
 Warning: Permanently added '192.168.55.233' (RSA) to the list of known hosts.
