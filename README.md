@@ -152,6 +152,8 @@ https://cdn.cnbj2m.fds.api.mi-img.com/cyberdog-package/packages/CyberDog_wavs.ta
 The CyberDog appears to use a custom Bluetooth T8S by RadioLink. It includes a cell phone holder as the main difference between the T8S(BT)<br>
 http://www.radiolink.com.cn/docc/index.html<br>
 http://radiolink.com.cn/doce/product-detail-167.html<br> 
+The "FPV Monitor Holder" is also included<br>
+https://www.aliexpress.com/item/2255800731743329.html<br>
 
 If you buy your own, you'll need to center the throttle stick<br>
 https://www.youtube.com/watch?v=4_FrGGzbxiE<br>
