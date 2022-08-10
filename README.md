@@ -154,7 +154,8 @@ http://www.radiolink.com.cn/docc/index.html<br>
 http://radiolink.com.cn/doce/product-detail-167.html<br> 
 The "FPV Monitor Holder" is also included<br>
 https://www.aliexpress.com/item/2255800731743329.html<br>
-
+https://www.amazon.com/ATA-HOBBY-Transmitter-Controller-Accessories/dp/B09Z5F798W<br>
+https://www.amazon.com/Radiolink-Controller-Receiver-Transmitter-Gamepad/dp/B07WR9Y1HG<br>
 If you buy your own, you'll need to center the throttle stick<br>
 https://www.youtube.com/watch?v=4_FrGGzbxiE<br>
 
