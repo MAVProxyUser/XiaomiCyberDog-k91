@@ -1,7 +1,6 @@
 # XiaomiCyberDog-k91
 小米集团 XIaomi 铁蛋 CyberDog 仿生四足机器人 Bionic quadruped robot<br>
 
-* [XiaomiCyberDog-k91](#xiaomicyberdog-k91)
 * [Archived Xiaomi CyberDog GitLab Project](#archived-xiaomi-cyberdog-gitlab-project)
 * [Active GitHub Project](#active-github-project)
    * [English Wiki](#english-wiki)
@@ -25,6 +24,21 @@ https://www.mi.com/shop/buy/detail?product_id=14815<br>
 # Archived Xiaomi CyberDog GitLab Project
 https://partner-gitlab.mioffice.cn/groups/cyberdog/-/archived<br>
 
+Clone all the repos with the following commands
+```
+git clone https://partner-gitlab.mioffice.cn/cyberdog/athena_tina_sdk.git
+git clone https://partner-gitlab.mioffice.cn/cyberdog/athena_drivers_gd_bin.git
+git clone https://partner-gitlab.mioffice.cn/cyberdog/athena_locomotion_bin.git
+git clone https://partner-gitlab.mioffice.cn/cyberdog/athena_cyberdog.git
+git clone https://partner-gitlab.mioffice.cn/cyberdog/athena_kernel.git
+git clone https://partner-gitlab.mioffice.cn/cyberdog/athena_vision.git
+git clone https://partner-gitlab.mioffice.cn/cyberdog/athena_assistant.git
+git clone https://partner-gitlab.mioffice.cn/cyberdog/athena_automation.git
+git clone https://partner-gitlab.mioffice.cn/cyberdog/athena_repos.git
+git clone https://partner-gitlab.mioffice.cn/cyberdog/athena_lcm_type.git
+git clone https://partner-gitlab.mioffice.cn/cyberdog/athena_drivers_st.git
+git clone https://partner-gitlab.mioffice.cn/cyberdog/build_extra.git
+```
 # Active GitHub Project 
 https://github.com/MiRoboticsLab/cyberdog_ros2<br>
 https://github.com/MiRoboticsLab/cyberdog_motor_sdk<br>
@@ -40,8 +54,50 @@ https://github.com/MiRoboticsLab/cyberdog_ros2/discussions/133<br>
 https://www.xiaomi.cn/board/27817860<br>
 
 # Xiaomi Phone Home
+You can occasionally see the athena_audio process in the SYN_SENT state connecting to 47.241.92.41 on https port. 
+
+This appears to be connection to access.speech.ai.xiaomi.com 
+
+```
+mi@lubuntu:/opt/ros2/cyberdog/data$ cat audio_debug.toml 
+title = "audio_debug_config"
+config_audio_force_enable = 0
+config_audio_dump_raw = 0
+config_audio_dump_asr = 0
+config_audio_silence = 0
+config_audio_testtoken = 0
+testtoken_access = <snip>
+testtoken_refresh = <snip>
+testtoken_deviceid = <snip>
+```
+
+The token further supports this
+```
+$ cat token.json  | jq
+{
+  "censored_DO-TOKEN-V1_access.speech.ai.xiaomi.com-WIFI-mioffice-5g": 
+"{\"dns\":[\"47.241.176.221:80\",\"47.241.176.221:443\"],\"expire_at\":1660787428}",
+  "censored_DO-TOKEN-V1_aes_key_info": "{\"aes_key\":\"xxxxxx\"}",
+  "censored_DO-TOKEN-V1_rsa_key_info": "{\"key_id\":\"xxxxx\",\"public_key\":\"-----BEGIN PUBLIC KEY-----\\ncensored
+PUBLIC KEY-----\\n\",\"expire_at\":1672815028000}",
+  "censored_DO-TOKEN-V1_token_info": 
+"{\"access_token\":\"default\",\"expire_at\":1662774605,\"refresh_at\":1661753376,\"refresh_token\":\"default\"}",
+  "censored_DO-TOKEN-V1_updated_at": "1660182605",
+  "auto_ping_interval": null,
+  "cloud_control_link_wss": "false",
+  "cloud_control_version": "72",
+  "next_cloud_control_interval": "120",
+  "next_cloud_control_time": "1660186210",
+  "next_hijack_detect_at": "1660441565",
+  "wss_expire_at": null
+}
+```
+ 
 This API is used to phone home for the Siri like audio "Home Assistant" functionality<br>
 https://developers.xiaoai.mi.com/documents/Home?type=/api/doc/render_markdown/SkillAccess/skill/fulu/PrivacyInfo
+
+The SDK in play is:  https://cdn.cnbj2m.fds.api.mi-img.com/cyberdog-package/packages/xiaoai_sdk_1.0.0.8.2.tar.xz
+
 
 ## Home Assistant voice commands
 Uses Cuda Deep Neural Network cuDNN<br>
