@@ -4,6 +4,7 @@
 * [Archived Xiaomi CyberDog GitLab Project](#archived-xiaomi-cyberdog-gitlab-project)
 * [Active GitHub Project](#active-github-project)
    * [English Wiki](#english-wiki)
+   * [Discussion](#discussion)
 * [OTA updates](#ota-updates)
 * [CyberDog Engineering Exploration Edition forum](#cyberdog-engineering-exploration-edition-forum)
 * [Xiaomi Phone Home](#xiaomi-phone-home)
@@ -47,7 +48,11 @@ https://github.com/MiRoboticsLab/cyberdog_tegra_kernel<br>
 ## English Wiki
 https://github.com/MiRoboticsLab/cyberdog_ros2/blob/main/README_EN.md<br>
 
+## Discussion
+Telegram group in Announcements: https://telegram.me/cyberdog_mi<br>
+
 # OTA updates
+https://github.com/MiRoboticsLab/cyberdog_ros2/discussions<br>
 https://github.com/MiRoboticsLab/cyberdog_ros2/discussions/133<br>
 
 # CyberDog Engineering Exploration Edition forum
@@ -318,6 +323,9 @@ tcp6       0      0 ::ffff:10.0.0.64:8980   ::ffff:10.0.0.65:44306  ESTABLISHED 
 
 Files left in /data/data/com.xiaomi.athena_remocons/files/mmkv/spUtils seemingly ties the current dog mode and settings to a Xiaomi account session 
 /data/data/com.xiaomi.athena_remocons/files/mmkv/<serialnumber> seems to tie the serial to the dogs settings, including the "room map"  
+
+The app forces the end user to login before being able to control the dog. The needs to be neutered.<br>
+You are also forced to read the manual, privacy policy, legal statement, etc. 
 
 # Passwords and systems
 
