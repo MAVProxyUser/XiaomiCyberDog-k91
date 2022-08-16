@@ -48,6 +48,7 @@ https://github.com/MiRoboticsLab/cyberdog_ros2/wiki<br>
 
 ## English Wiki
 https://github.com/MiRoboticsLab/cyberdog_ros2/blob/main/README_EN.md<br>
+https://github.com/MiRoboticsLab/cyberdog_ros2/wiki/铁蛋ROS-2软件架构-%7C-ROS-2-Software-Architecture-of-CyberDog#english<br>
 
 ## Discussion
 Telegram group in Announcements: https://telegram.me/cyberdog_mi<br>
