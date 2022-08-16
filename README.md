@@ -44,6 +44,7 @@ git clone https://partner-gitlab.mioffice.cn/cyberdog/build_extra.git
 https://github.com/MiRoboticsLab/cyberdog_ros2<br>
 https://github.com/MiRoboticsLab/cyberdog_motor_sdk<br>
 https://github.com/MiRoboticsLab/cyberdog_tegra_kernel<br>
+https://github.com/MiRoboticsLab/cyberdog_ros2/wiki<br>
 
 ## English Wiki
 https://github.com/MiRoboticsLab/cyberdog_ros2/blob/main/README_EN.md<br>
