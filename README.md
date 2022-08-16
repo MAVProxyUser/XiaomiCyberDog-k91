@@ -18,6 +18,7 @@
 * [Android App](#android-app)
 * [Passwords and systems](#passwords-and-systems)
 * [USB Download port](#usb-download-port)
+* [LED control](#led-control)
 
 The smart robot dog has become a reality. With the new device by Xiaomi, everyone can have such an electronic pet.<br>
 https://xiaomi-mi.com/appliances/yi-home-camera-3/<br>
@@ -356,5 +357,25 @@ PING 192.168.55.1 (192.168.55.1) 56(84) bytes of data.
 --- 192.168.55.1 ping statistics ---
 2 packets transmitted, 2 received, 0% packet loss, time 1019ms
 rtt min/avg/max/mdev = 0.321/0.335/0.350/0.014 ms
+```
 
+# LED control
+
+```
+import rclcomm
+import rclpy
+
+https://raw.githubusercontent.com/MiRoboticsLab/cyberdog_ros2/main/cyberdog_interaction/cyberdog_led/README.md
+
+rclpy.init(args=None)
+ledClient = rclcomm.LedClientAsync()
+
+if ledClient.check_ready():
+	if ledClient.get_last_always():
+		ledClient.send_request(ledClient.LED_BT_ADV,ledClient.TYPE_FUNCTION,ledClient.COMMAND_OFF)  # clean adv 
+led
+	else:
+	#	ledClient.send_request(ledClient.LED_WIFI_CONNECT_SUCCESS,ledClient.TYPE_FUNCTION, 1000000000)
+		ledClient.send_request(25,ledClient.TYPE_ALARM, ledClient.COMMAND_ALWAYSON) # SkyBlue Breath == 25
+```
 
