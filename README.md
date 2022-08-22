@@ -359,6 +359,9 @@ PING 192.168.55.1 (192.168.55.1) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.321/0.335/0.350/0.014 ms
 ```
 
+Alternately if you plug a USB adapter into the extension port, you need to 
+edit th e/etc/netplan/01-netcfg.yaml file to get DHCP
+
 # LED control
 
 ```
