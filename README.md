@@ -362,6 +362,37 @@ rtt min/avg/max/mdev = 0.321/0.335/0.350/0.014 ms
 Alternately if you plug a USB adapter into the extension port, you need to 
 edit th e/etc/netplan/01-netcfg.yaml file to get DHCP
 
+```
+mi@lubuntu:/etc/netplan$ sudo pico 01-netcfg.yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eth1:
+      dhcp4: true
+      optional: true
+
+mi@lubuntu:/etc/netplan$ sudo netplan try 
+Do you want to keep these settings?
+
+
+Press ENTER before the timeout to accept the new configuration
+
+
+Changes will revert in 118 seconds
+Configuration accepted.
+mi@lubuntu:/etc/netplan$ ifconfig eth1
+eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.147  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::205:1bff:fec1:c8be  prefixlen 64  scopeid 0x20<link>
+        ether 00:05:1b:c1:c8:be  txqueuelen 1000  (Ethernet)
+        RX packets 93  bytes 5476 (5.4 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 87  bytes 9430 (9.4 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
+
+
 # LED control
 
 ```
