@@ -496,6 +496,8 @@ mi@lubuntu:~$ sudo diff /etc/systemd/system/cyclonedds.xml /etc/systemd/system/c
 
 
 ## Rviz + remote control plugin
+https://www.bilibili.com/video/BV1ML4y1b78d
+
 $ mkdir ~/cyberdog_ws/src -p
 $ cd ~/cyberdog_ws/src/
 $ git clone https://github.com/linzhibo/Cyberdog_rviz2_plugin.git
