@@ -474,7 +474,7 @@ https://github.com/MiRoboticsLab/cyberdog_ros2/wiki/CyberDog-DDS本地及多播�
 
 modify the config as follows:
 ```
-root@lubuntu:/home/mi#  grep -E 'CYCLONEDDS_URI|ROS_LOCALHOST_ONLY' /etc -r
+root@lubuntu:/home/mi# grep -E 'CYCLONEDDS_URI|ROS_LOCALHOST_ONLY' /etc -r
 
 /etc/systemd/system/cyberdog_automation.service:#Environment="ROS_LOCALHOST_ONLY=1"
 /etc/systemd/system/cyberdog_automation.service:#Environment="CYCLONEDDS_URI=file:///etc/systemd/system/cyclonedds.xml"
@@ -485,7 +485,7 @@ root@lubuntu:/home/mi#  grep -E 'CYCLONEDDS_URI|ROS_LOCALHOST_ONLY' /etc -r
 /etc/mi/mi_config:#export ROS_LOCALHOST_ONLY=1
 /etc/mi/mi_config:#export CYCLONEDDS_URI=file:///etc/systemd/system/cyclonedds.xml
 
-$  grep -E 'NetworkInterfaceAddress|AllowMulticast' /etc/systemd/system/cyclonedds.xml
+root@lubuntu:/home/mi# grep -E 'NetworkInterfaceAddress|AllowMulticast' /etc/systemd/system/cyclonedds.xml
             <NetworkInterfaceAddress>wlan0</NetworkInterfaceAddress>
             <AllowMulticast>true</AllowMulticast>
 ```
