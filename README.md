@@ -500,6 +500,7 @@ $ git clone https://github.com/linzhibo/Cyberdog_rviz2_plugin.git
 ```
 Set dog namespace in ./Cyberdog_rviz2_plugin/src/mission_panel.cpp
 ```
+$ cd ~/cyberdog_ws/src/
 $ git clone https://github.com/MiRoboticsLab/cyberdog_ros2.git
 $ cd ~/cyberdog_ws/
 $ colcon build
