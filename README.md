@@ -469,7 +469,10 @@ $ ps -ax | grep dds -i
 ```
 
 ## Remote listener for ROS2
-The github wiki gives us more detail
+
+The dog must be on the same network as your remote PC. Install the APK on an android phone and use "Start To Connect" and if you do not see a "Nearby CyberDog", you need to use "Quick Connect" + sign and add a dog via "Bluetooth Connection". If you don't see a dog via bluetooth, touch his head for 3 seconds until it chimes, and try again.
+
+The github wiki gives us more detail<br>
 https://github.com/MiRoboticsLab/cyberdog_ros2/wiki/CyberDog-DDS本地及多播设置
 
 modify the config as follows:
