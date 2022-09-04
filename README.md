@@ -485,14 +485,9 @@ root@lubuntu:/home/mi#  grep -E 'CYCLONEDDS_URI|ROS_LOCALHOST_ONLY' /etc -r
 /etc/mi/mi_config:#export ROS_LOCALHOST_ONLY=1
 /etc/mi/mi_config:#export CYCLONEDDS_URI=file:///etc/systemd/system/cyclonedds.xml
 
-mi@lubuntu:~$ sudo diff /etc/systemd/system/cyclonedds.xml /etc/systemd/system/cyclonedds.xml.bak 
-[sudo] password for mi: 
-5,6c5,6
-<             <NetworkInterfaceAddress>wlan0</NetworkInterfaceAddress>
-<             <AllowMulticast>true</AllowMulticast>
----
->             <NetworkInterfaceAddress>lo</NetworkInterfaceAddress>
->             <AllowMulticast>false</AllowMulticast>
+$  grep -E 'NetworkInterfaceAddress|AllowMulticast' /etc/systemd/system/cyclonedds.xml
+            <NetworkInterfaceAddress>wlan0</NetworkInterfaceAddress>
+            <AllowMulticast>true</AllowMulticast>
 ```
 
 
