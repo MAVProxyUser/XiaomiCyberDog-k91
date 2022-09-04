@@ -516,7 +516,7 @@ export ROS_DOMAIN_ID=42
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 ```
 
-You'll know it works when you can enable the cam
+You'll know it works when you can enable the cam from the remote PC
 ```
 kfinisterre@dev0:~$ ros2 service call /mi1036871/camera/enable std_srvs/SetBool "{data : True}"
 waiting for service to become available...
