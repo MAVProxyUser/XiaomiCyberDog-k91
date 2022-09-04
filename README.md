@@ -461,7 +461,7 @@ $ sudo apt-get install ros-foxy-rmw-cyclonedds-cpp
 $ source /opt/ros/foxy/setup.bash
 ```
 
-The dog uses Cyclone DDS & Dos Domain 42
+The dog uses Cyclone DDS & ROS Domain 42
 
 ```
 $ ps -ax | grep dds -i
