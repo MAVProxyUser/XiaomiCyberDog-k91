@@ -19,6 +19,8 @@
 * [Passwords and systems](#passwords-and-systems)
 * [USB Download port](#usb-download-port)
 * [LED control](#led-control)
+* [Remote ROS connectivity.](#remote-ros-connectivity)
+   * [Rviz + remote control plugin](#rviz--remote-control-plugin)
 
 The smart robot dog has become a reality. With the new device by Xiaomi, everyone can have such an electronic pet.<br>
 https://xiaomi-mi.com/appliances/yi-home-camera-3/<br>
@@ -413,3 +415,74 @@ led
 		ledClient.send_request(25,ledClient.TYPE_ALARM, ledClient.COMMAND_ALWAYSON) # SkyBlue Breath == 25
 ```
 
+# Backdoor wifi connections
+```
+mi@lubuntu:/etc/init.d$ nmcli connection show
+NAME                UUID                                  TYPE      DEVICE 
+DataPipe            defae6a4-944f-45b4-8d19-1a364b4f70e8  wifi      wlan0  
+eth0                ee15f340-6d55-47ed-b794-39c9d63586c7  ethernet  eth0   
+l4tbr0              d91c2d61-76a2-4ef1-9514-cd2d9695bbde  bridge    l4tbr0 
+1234                f3ad1b24-3707-4c1a-b347-8327164b9bd8  wifi      --     
+Dog2                9b9423fe-ce84-40ae-9757-9ffd15824299  wifi      --     
+Dreame-test         0acd8a29-8c8c-4b9e-81cd-2d53404bf7e2  wifi      --     
+Dreame-test 1       2a28484c-8323-4719-a888-4c8dc7db2e54  wifi      --     
+Dreame-test 2       650c03e9-aef0-48be-b7de-1b22b863b105  wifi      --     
+Dreame-test 3       39d2f37b-a38d-4cd6-9b3a-0b9249a7cec9  wifi      --     
+Dreame-test 4       42370f0a-8270-42d4-8c5c-c93b26d7dc2a  wifi      --     
+Dreame-test 5       14cd5bf9-6416-4744-80b1-a89693feea90  wifi      --     
+Redmi               e7161e00-13d9-44f5-975b-312b53f80eec  wifi      --     
+Wired connection 1  86d27518-92c1-3b91-9a7e-3b3b3cd31351  ethernet  --     
+ddog1               2e3920ce-b3d3-4589-8dee-a7f18d4b6f60  wifi      --     
+dog4                4fece0fb-dc5c-416f-a4c7-cde54368164c  wifi      --     
+mi@lubuntu:/etc/init.d$ sudo grep -r '^psk=' /etc/NetworkManager/system-connections/
+/etc/NetworkManager/system-connections/Dreame-test 2:psk=12345678
+/etc/NetworkManager/system-connections/Redmi:psk=peterwu123
+/etc/NetworkManager/system-connections/dog4:psk=12345678
+/etc/NetworkManager/system-connections/DataPipe:psk=givemeinternet!now
+/etc/NetworkManager/system-connections/Dreame-test:psk=12345678
+/etc/NetworkManager/system-connections/Dreame-test 1:psk=12345678
+/etc/NetworkManager/system-connections/Dog2:psk=123456789
+/etc/NetworkManager/system-connections/Dreame-test 4:psk=12345678
+/etc/NetworkManager/system-connections/1234:psk=123456789
+/etc/NetworkManager/system-connections/ddog1:psk=123456789
+/etc/NetworkManager/system-connections/Dreame-test 3:psk=12345678
+/etc/NetworkManager/system-connections/Dreame-test 5:psk=12345678
+```
+
+# Remote ROS connectivity.
+
+Install Debinan binary version of foxy
+https://docs.ros.org/en/rolling/Installation/Alternatives/Ubuntu-Install-Binary.html
+$ sudo apt-get install libzmq3-dev
+$ sudo apt install python3-colcon-common-extensions
+$ sudo apt-get install ros-foxy-rmw-cyclonedds-cpp
+$ source /opt/ros/foxy/setup.bash
+
+The dog uses Cyclone DDS & Dos Domain 42
+
+```
+$ ps -ax | grep dds -i
+23620 pts/2    Sl     0:01 /usr/bin/python3 /opt/ros2/foxy/bin/_ros2_daemon --rmw-implementation rmw_cyclonedds_cpp --ros-domain-id 42
+```
+
+The github wiki gives us more detail
+https://github.com/MiRoboticsLab/cyberdog_ros2/wiki/CyberDog-DDS本地及多播设置
+
+## Rviz + remote control plugin
+$ mkdir ~/cyberdog_ws/src -p
+$ cd ~/cyberdog_ws/src/
+$ git clone https://github.com/linzhibo/Cyberdog_rviz2_plugin.git
+
+Set dog namespace in ./Cyberdog_rviz2_plugin/src/mission_panel.cpp
+
+$ git clone https://github.com/MiRoboticsLab/cyberdog_ros2.git
+$ cd ~/cyberdog_ws/
+$ colcon build
+$ source install/setup.sh
+
+To talk to the dog remotely several conditions are necessary
+
+export ROS_DOMAIN_ID=42
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+
+$ rviz2
