@@ -20,6 +20,7 @@
 * [USB Download port](#usb-download-port)
 * [LED control](#led-control)
 * [Remote ROS connectivity.](#remote-ros-connectivity)
+   * [Remote listener for ROS2](#remote-listener-for-ros2)
    * [Rviz + remote control plugin](#rviz--remote-control-plugin)
 
 The smart robot dog has become a reality. With the new device by Xiaomi, everyone can have such an electronic pet.<br>
@@ -465,8 +466,34 @@ $ ps -ax | grep dds -i
 23620 pts/2    Sl     0:01 /usr/bin/python3 /opt/ros2/foxy/bin/_ros2_daemon --rmw-implementation rmw_cyclonedds_cpp --ros-domain-id 42
 ```
 
+## Remote listener for ROS2
 The github wiki gives us more detail
 https://github.com/MiRoboticsLab/cyberdog_ros2/wiki/CyberDog-DDS本地及多播设置
+
+modify the config as follows:
+```
+root@lubuntu:/home/mi#  grep -E 'CYCLONEDDS_URI|ROS_LOCALHOST_ONLY' /etc -r
+
+/etc/systemd/system/cyberdog_automation.service:#Environment="ROS_LOCALHOST_ONLY=1"
+/etc/systemd/system/cyberdog_automation.service:#Environment="CYCLONEDDS_URI=file:///etc/systemd/system/cyclonedds.xml"
+/etc/systemd/system/cyberdog_ros2.service:#Environment="ROS_LOCALHOST_ONLY=1"
+/etc/systemd/system/cyberdog_ros2.service:#Environment="CYCLONEDDS_URI=file:///etc/systemd/system/cyclonedds.xml"
+/etc/systemd/system/bluetooth_ros2.service:#Environment="ROS_LOCALHOST_ONLY=1"
+/etc/systemd/system/bluetooth_ros2.service:#Environment="CYCLONEDDS_URI=file:///etc/systemd/system/cyclonedds.xml"
+/etc/mi/mi_config:#export ROS_LOCALHOST_ONLY=1
+/etc/mi/mi_config:#export CYCLONEDDS_URI=file:///etc/systemd/system/cyclonedds.xml
+
+mi@lubuntu:~$ sudo diff /etc/systemd/system/cyclonedds.xml /etc/systemd/system/cyclonedds.xml.bak 
+
+[sudo] password for mi: 
+5,6c5,6
+<             <NetworkInterfaceAddress>wlan0</NetworkInterfaceAddress>
+<             <AllowMulticast>true</AllowMulticast>
+---
+>             <NetworkInterfaceAddress>lo</NetworkInterfaceAddress>
+>             <AllowMulticast>false</AllowMulticast>
+```
+
 
 ## Rviz + remote control plugin
 $ mkdir ~/cyberdog_ws/src -p
@@ -480,9 +507,23 @@ $ cd ~/cyberdog_ws/
 $ colcon build
 $ source install/setup.sh
 
-To talk to the dog remotely several conditions are necessary
+To talk to the dog remotely several conditions are necessary on the client PC
 
 export ROS_DOMAIN_ID=42
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
+You'll know it works when you can enable the cam
+```
+kfinisterre@dev0:~$ ros2 service call /mi1036871/camera/enable std_srvs/SetBool "{data : True}"
+waiting for service to become available...
+requester: making request: std_srvs.srv.SetBool_Request(data=True)
+
+response:
+std_srvs.srv.SetBool_Response(success=False, message='Device is already ON.')
+
+```
+
+Next launch rviz
+```
 $ rviz2
+```
