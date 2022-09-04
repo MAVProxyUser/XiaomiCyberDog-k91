@@ -454,10 +454,12 @@ mi@lubuntu:/etc/init.d$ sudo grep -r '^psk=' /etc/NetworkManager/system-connecti
 
 Install Debinan binary version of foxy
 https://docs.ros.org/en/rolling/Installation/Alternatives/Ubuntu-Install-Binary.html
+```
 $ sudo apt-get install libzmq3-dev
 $ sudo apt install python3-colcon-common-extensions
 $ sudo apt-get install ros-foxy-rmw-cyclonedds-cpp
 $ source /opt/ros/foxy/setup.bash
+```
 
 The dog uses Cyclone DDS & Dos Domain 42
 
@@ -484,7 +486,6 @@ root@lubuntu:/home/mi#  grep -E 'CYCLONEDDS_URI|ROS_LOCALHOST_ONLY' /etc -r
 /etc/mi/mi_config:#export CYCLONEDDS_URI=file:///etc/systemd/system/cyclonedds.xml
 
 mi@lubuntu:~$ sudo diff /etc/systemd/system/cyclonedds.xml /etc/systemd/system/cyclonedds.xml.bak 
-
 [sudo] password for mi: 
 5,6c5,6
 <             <NetworkInterfaceAddress>wlan0</NetworkInterfaceAddress>
@@ -497,22 +498,23 @@ mi@lubuntu:~$ sudo diff /etc/systemd/system/cyclonedds.xml /etc/systemd/system/c
 
 ## Rviz + remote control plugin
 https://www.bilibili.com/video/BV1ML4y1b78d
-
+```
 $ mkdir ~/cyberdog_ws/src -p
 $ cd ~/cyberdog_ws/src/
 $ git clone https://github.com/linzhibo/Cyberdog_rviz2_plugin.git
-
+```
 Set dog namespace in ./Cyberdog_rviz2_plugin/src/mission_panel.cpp
-
+```
 $ git clone https://github.com/MiRoboticsLab/cyberdog_ros2.git
 $ cd ~/cyberdog_ws/
 $ colcon build
 $ source install/setup.sh
-
+```
 To talk to the dog remotely several conditions are necessary on the client PC
-
+```
 export ROS_DOMAIN_ID=42
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+```
 
 You'll know it works when you can enable the cam
 ```
