@@ -493,6 +493,7 @@ root@lubuntu:/home/mi# grep -E 'NetworkInterfaceAddress|AllowMulticast' /etc/sys
             <AllowMulticast>true</AllowMulticast>
 ```
 
+Reboot after making the changes. Reboot your client PC if you have any connectivity failure. DDS can be finiky!
 
 ## Rviz + remote control plugin
 https://www.bilibili.com/video/BV1ML4y1b78d
@@ -537,3 +538,4 @@ source /opt/ros/foxy/setup.bash
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 export ROS_DOMAIN_ID=42
 ```
+
