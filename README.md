@@ -530,3 +530,10 @@ Next launch rviz
 ```
 $ rviz2
 ```
+
+To ensure this works at next login, add the following to ~/.bashrc
+```
+source /opt/ros/foxy/setup.bash
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+export ROS_DOMAIN_ID=42
+```
