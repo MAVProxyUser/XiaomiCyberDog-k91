@@ -539,3 +539,4 @@ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 export ROS_DOMAIN_ID=42
 ```
 
+It has been observed that after disconnection of DDS, sometimes the PC client is unable to re-connect until the dog is rebooted.
