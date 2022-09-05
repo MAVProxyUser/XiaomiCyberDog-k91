@@ -486,7 +486,7 @@ root@lubuntu:/home/mi# grep -E 'CYCLONEDDS_URI|ROS_LOCALHOST_ONLY' /etc -r
 /etc/systemd/system/bluetooth_ros2.service:#Environment="ROS_LOCALHOST_ONLY=1"
 /etc/systemd/system/bluetooth_ros2.service:#Environment="CYCLONEDDS_URI=file:///etc/systemd/system/cyclonedds.xml"
 /etc/mi/mi_config:#export ROS_LOCALHOST_ONLY=1
-/etc/mi/mi_config:#export CYCLONEDDS_URI=file:///etc/systemd/system/cyclonedds.xml
+/etc/mi/mi_config:export CYCLONEDDS_URI=file:///etc/systemd/system/cyclonedds.xml
 
 root@lubuntu:/home/mi# grep -E 'NetworkInterfaceAddress|AllowMulticast' /etc/systemd/system/cyclonedds.xml
             <NetworkInterfaceAddress>wlan0</NetworkInterfaceAddress>
