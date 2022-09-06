@@ -541,3 +541,4 @@ source ~/cyberdog_ws/src/install/setup.sh
 ```
 
 It has been observed that after disconnection of DDS, sometimes the PC client is unable to re-connect until the dog is rebooted.
+It may be possible to use trace to debug this issue: https://cyclonedds.io/content/guides/tracefile.html
