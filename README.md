@@ -557,7 +557,7 @@ We can do this by adding the following to /etc/systemd/system/cyclonedds.xml bet
 
 # Hotspot Wifi 
 To enable:
-
+```
 mi@lubuntu:~$ sudo su 
 
 root@lubuntu:/home/mi# nmcli dev wifi hotspot ifname wlan0 ssid test password "test1234"
@@ -573,10 +573,11 @@ connection.autoconnect:                 yes
 ...
 
 root@lubuntu:/home/mi# reboot
+```
 
 Your adapter will come up with the default network manager address. This address is hardcoded into network manager src/nm-device.c 
 https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/1098362
-
+```
 root@lubuntu:/home/mi# ifconfig wlan0
 wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         inet 10.42.0.1  netmask 255.255.255.0  broadcast 10.42.0.255
@@ -586,9 +587,10 @@ wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         RX errors 0  dropped 3  overruns 0  frame 0
         TX packets 2088  bytes 14971817 (14.9 MB)
         TX errors 0  dropped 1 overruns 0  carrier 0  collisions 0
+```
 
 You should be able to ping any client that connects at this point. You'll find any connected hosts in the leases file. 
-
+```
 root@lubuntu:/home/mi# cat /var/lib/misc/dnsmasq.leases
 1663085613 ea:2c:f8:2d:db:ce 10.42.0.12 * 01:ea:2c:f8:2d:db:ce
 
@@ -601,12 +603,14 @@ PING 10.42.0.12 (10.42.0.12) 56(84) bytes of data.
 --- 10.42.0.12 ping statistics ---
 3 packets transmitted, 3 received, 0% packet loss, time 2003ms
 rtt min/avg/max/mdev = 3.247/4.956/7.273/1.699 ms
-
+```
 
 To disable the hotspot: 
+```
 mi@lubuntu:~$ sudo su 
 root@lubuntu:/home/mi# nmcli connection delete Hotspot
 Connection 'Hotspot' (e2898ed9-cce4-4926-9bca-cf4fb32020e8) successfully deleted.
+```
 
 # Useful Repos
 Playstation 4 Dual Shock for CyberDog
