@@ -24,6 +24,7 @@
    * [Remote listener for ROS2](#remote-listener-for-ros2)
    * [Rviz + remote control plugin](#rviz--remote-control-plugin)
 * [Hotspot Wifi](#hotspot-wifi)
+* [Dreame involvement?](#dreame-involvement)
 * [Useful Repos](#useful-repos)
 
 The smart robot dog has become a reality. With the new device by Xiaomi, everyone can have such an electronic pet.<br>
@@ -614,6 +615,48 @@ To disable the hotspot:
 mi@lubuntu:~$ sudo su 
 root@lubuntu:/home/mi# nmcli connection delete Hotspot
 Connection 'Hotspot' (e2898ed9-cce4-4926-9bca-cf4fb32020e8) successfully deleted.
+```
+
+# Dreame involvement?
+
+On the dog Linux you can see dreame refrences, the first is in the wifi backdoors. The second is in the ros packages 
+
+```
+mi@lubuntu:~$ grep dreame /opt/ -ri
+/opt/ros2/cyberdog/share/chassis_node/package.xml:  <maintainer email="yangbowei@dreame.tech">ybw</maintainer>
+/opt/ros2/cyberdog/share/ov_msckf/package.xml:  <author email="yangsheng@dreame.tech">yangsheng</author>
+/opt/ros2/cyberdog/share/interactive/package.xml:  <maintainer email="chenshaojie@dreame.tech">csj</maintainer>
+```
+
+You can see Dreame refrences on the Tina linux instance.
+```
+mi@lubuntu:~$ ssh root@192.168.55.233
+Warning: Permanently added '192.168.55.233' (RSA) to the list of known hosts.
+
+
+BusyBox v1.27.2 () built-in shell (ash)
+
+ _____  _              __     _
+|_   _||_| ___  _ _   |  |   |_| ___  _ _  _ _
+  | |   _ |   ||   |  |  |__ | ||   || | ||_'_|
+  | |  | || | || _ |  |_____||_||_|_||___||_,_|
+  |_|  |_||_|_||_|_|  Tina is Based on OpenWrt!
+ ------------------------------------------------
+ Tina Linux (Neptune, 5C1C9C53)
+ ------------------------------------------------
+ 请输入help指令,获取系统帮助
+ ------------------------------------------------
+ please enter the help command to get system help
+ ------------------------------------------------
+root@TinaLinux:~# cd /robot
+root@TinaLinux:/robot#  strings manager | grep Dreame -i 
+dreame_state
+100 DREAME SERVER HELLO
+root@TinaLinux:/robot# grep dreame . -ri
+./manager:dreame_state
+./manager:100 DREAME SERVER HELLO
+./manager_config/sub-project/imu_online_calib/imu_online_calibrate:St23_Sp_counted_ptr_inplaceIN9DreameDog4User14MessageHandlerESaIS2_ELN9__gnu_cxx12_Lock_policyE2EE
+./manager_config/sub-project/imu_online_calib/imu_online_calibrate:NSt6thread11_State_implISt12_Bind_simpleIFSt7_Mem_fnIMN9DreameDog4User14MessageHandlerEFbvEEPS5_EEEE
 ```
 
 # Useful Repos
