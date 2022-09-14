@@ -556,6 +556,22 @@ We can do this by adding the following to /etc/systemd/system/cyclonedds.xml bet
 
 ```
 
+Logs will be left in /home/mi
+
+```
+mi@lubuntu:~$ head  cdds.log.7860 
+1663102587.967364 [42]       ros2: config: Domain/General/NetworkInterfaceAddress/#text: wlan0 {1}
+1663102587.967482 [42]       ros2: config: Domain/General/MulticastRecvNetworkInterfaceAddresses/#text: preferred {}
+1663102587.967509 [42]       ros2: config: Domain/General/ExternalNetworkAddress/#text: auto {}
+1663102587.967528 [42]       ros2: config: Domain/General/ExternalNetworkMask/#text: 0.0.0.0 {}
+1663102587.967549 [42]       ros2: config: Domain/General/AllowMulticast/#text: true {1}
+1663102587.967597 [42]       ros2: config: Domain/General/PreferMulticast/#text: false {}
+1663102587.967615 [42]       ros2: config: Domain/General/MulticastTimeToLive/#text: 32 {}
+1663102587.967635 [42]       ros2: config: Domain/General/DontRoute/#text: false {}
+1663102587.967653 [42]       ros2: config: Domain/General/Transport/#text: udp {}
+1663102587.967703 [42]       ros2: config: Domain/General/EnableMulticastLoopback/#text: true {}
+```
+
 # Hotspot Wifi 
 To enable:
 ```
