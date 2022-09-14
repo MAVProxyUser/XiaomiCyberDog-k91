@@ -618,6 +618,8 @@ Connection 'Hotspot' (e2898ed9-cce4-4926-9bca-cf4fb32020e8) successfully deleted
 ```
 
 # Dreame involvement?
+"At the end of 2017, Dreame joined the Xiaomi Ecological Chain, as the driving force and leading enterprise of smart household cleaning appliances."<br>
+https://global.dreametech.com/pages/brand-story
 
 I noticed that there is realdime dreame mapping support that seems identical to the Xiaomi implementation on the dog<br>
 https://github.com/PiotrMachowski/Home-Assistant-custom-components-Xiaomi-Cloud-Map-Extractor
