@@ -605,6 +605,10 @@ PING 10.42.0.12 (10.42.0.12) 56(84) bytes of data.
 rtt min/avg/max/mdev = 3.247/4.956/7.273/1.699 ms
 ```
 
+Next you must enable the app to work. 
+You'll need to make a Bluetooth connection to tell the dog to connect to itself. On the "Quick Connect" screen, click the "+" sign. Choose the Dog SN to connect. Then choose the "Network connectin". In 
+this case we'll literally tell the dog to connect to itself. Choose the "test" Access Point that is created with our Network Manager hotspot setup above. 
+
 To disable the hotspot: 
 ```
 mi@lubuntu:~$ sudo su 
@@ -622,3 +626,14 @@ https://github.com/sraccah/CyberDog_42 - GRPC based control, and voice support
 
 https://github.com/linzhibo/Cyberdog_utils - Centroid follower example
 
+https://github.com/zbwu/cyberdog_misc - includes bits of the motion controller (locomotion wrapper)
+
+https://github.com/zbwu/athena_motorcontrol 
+
+https://github.com/zbwu/athena_locomotion
+
+https://github.com/zbwu/athena_adapter
+
+https://github.com/zbwu/GD32_SPINE
+
+https://github.com/PiotrMachowski/Home-Assistant-custom-components-Xiaomi-Cloud-Map-Extractor
