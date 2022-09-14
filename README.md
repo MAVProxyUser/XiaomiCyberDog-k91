@@ -619,6 +619,9 @@ Connection 'Hotspot' (e2898ed9-cce4-4926-9bca-cf4fb32020e8) successfully deleted
 
 # Dreame involvement?
 
+I noticed that there is realdime dreame mapping support that seems identical to the Xiaomi implementation on the dog<br>
+https://github.com/PiotrMachowski/Home-Assistant-custom-components-Xiaomi-Cloud-Map-Extractor
+
 On the dog Linux you can see dreame refrences, the first is in the wifi backdoors. The second is in the ros packages 
 
 ```
