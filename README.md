@@ -682,6 +682,8 @@ root@TinaLinux:/robot# grep dreame . -ri
 
 # Useful Repos
 Playstation 4 Dual Shock for CyberDog
+https://github.com/Karlsx/CyberDog_Ctrl - grpc control
+
 https://github.com/Sunshengjin/ds4_for_cyberdog - PS4 specific joystick support
 
 https://github.com/cyh1231wp/cyberdog-joystick - generic bluetooth joystick support
