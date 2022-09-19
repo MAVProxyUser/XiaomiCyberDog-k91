@@ -703,3 +703,97 @@ https://github.com/zbwu/athena_adapter
 https://github.com/zbwu/GD32_SPINE
 
 https://github.com/PiotrMachowski/Home-Assistant-custom-components-Xiaomi-Cloud-Map-Extractor
+
+# Fixing rosdep
+
+rosdep is broken
+```
+mi@lubuntu:~/cyberdog_ws$ rosdep
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/pkg_resources/__init__.py", line 568, in _build_master
+    ws.require(__requires__)
+  File "/usr/local/lib/python3.6/dist-packages/pkg_resources/__init__.py", line 886, in require
+    needed = self.resolve(parse_requirements(requirements))
+  File "/usr/local/lib/python3.6/dist-packages/pkg_resources/__init__.py", line 777, in resolve
+    raise VersionConflict(dist, req).with_context(dependent_req)
+pkg_resources.VersionConflict: (rosdep 0.22.1 (/home/mi/.local/lib/python3.6/site-packages), Requirement.parse('rosdep==0.20.0'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/rosdep", line 6, in <module>
+    from pkg_resources import load_entry_point
+  File "/usr/local/lib/python3.6/dist-packages/pkg_resources/__init__.py", line 3242, in <module>
+    @_call_aside
+  File "/usr/local/lib/python3.6/dist-packages/pkg_resources/__init__.py", line 3226, in _call_aside
+    f(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/pkg_resources/__init__.py", line 3255, in _initialize_master_working_set
+    working_set = WorkingSet._build_master()
+  File "/usr/local/lib/python3.6/dist-packages/pkg_resources/__init__.py", line 570, in _build_master
+    return cls._build_from_requirements(__requires__)
+  File "/usr/local/lib/python3.6/dist-packages/pkg_resources/__init__.py", line 583, in _build_from_requirements
+    dists = ws.resolve(reqs, Environment())
+  File "/usr/local/lib/python3.6/dist-packages/pkg_resources/__init__.py", line 772, in resolve
+    raise DistributionNotFound(req, requirers)
+pkg_resources.DistributionNotFound: The 'rosdep==0.20.0' distribution was not found and is required by the application
+```
+
+You can fix it like this
+```
+mi@lubuntu:~/cyberdog_ws$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+mi@lubuntu:~/cyberdog_ws$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 2
+
+mi@lubuntu:~/cyberdog_ws$ update-alternatives --list python
+/usr/bin/python2.7
+/usr/bin/python3.6
+
+
+mi@lubuntu:~/cyberdog_ws$ sudo update-alternatives --config python
+There are 2 choices for the alternative python (providing /usr/bin/python).
+
+  Selection    Path                Priority   Status
+------------------------------------------------------------
+* 0            /usr/bin/python3.6   2         auto mode
+  1            /usr/bin/python2.7   1         manual mode
+  2            /usr/bin/python3.6   2         manual mode
+
+Press <enter> to keep the current choice[*], or type selection number: 1
+
+mi@lubuntu:~/cyberdog_ws$ sudo rosdep init
+Wrote /etc/ros/rosdep/sources.list.d/20-default.list
+Recommended: please run
+
+	rosdep update
+
+mi@lubuntu:~/cyberdog_ws$ sudo rosdep update
+reading in sources list data from /etc/ros/rosdep/sources.list.d
+Warning: running 'rosdep update' as root is not recommended.
+  You should run 'sudo rosdep fix-permissions' and invoke 'rosdep update' again without sudo.
+Hit https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/osx-homebrew.yaml
+Hit https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/base.yaml
+Hit https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/python.yaml
+Hit https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/ruby.yaml
+Hit https://raw.githubusercontent.com/ros/rosdistro/master/releases/fuerte.yaml
+Query rosdistro index https://raw.githubusercontent.com/ros/rosdistro/master/index-v4.yaml
+Skip end-of-life distro "ardent"
+Skip end-of-life distro "bouncy"
+Skip end-of-life distro "crystal"
+Skip end-of-life distro "dashing"
+Skip end-of-life distro "eloquent"
+Add distro "foxy"
+Add distro "galactic"
+Skip end-of-life distro "groovy"
+Add distro "humble"
+Skip end-of-life distro "hydro"
+Skip end-of-life distro "indigo"
+Skip end-of-life distro "jade"
+Skip end-of-life distro "kinetic"
+Skip end-of-life distro "lunar"
+Add distro "melodic"
+Add distro "noetic"
+Add distro "rolling"
+updated cache in /home/mi/.ros/rosdep/sources.cache
+```
+
+
+
