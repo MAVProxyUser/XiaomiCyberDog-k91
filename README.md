@@ -26,6 +26,7 @@
 * [Hotspot Wifi](#hotspot-wifi)
 * [Dreame involvement?](#dreame-involvement)
 * [Useful Repos](#useful-repos)
+* [Fixing rosdep](#fixing-rosdep)
 
 The smart robot dog has become a reality. With the new device by Xiaomi, everyone can have such an electronic pet.<br>
 https://xiaomi-mi.com/appliances/yi-home-camera-3/<br>
@@ -681,28 +682,17 @@ root@TinaLinux:/robot# grep dreame . -ri
 ```
 
 # Useful Repos
-Playstation 4 Dual Shock for CyberDog
-https://github.com/Karlsx/CyberDog_Ctrl - grpc control
-
-https://github.com/Sunshengjin/ds4_for_cyberdog - PS4 specific joystick support
-
-https://github.com/cyh1231wp/cyberdog-joystick - generic bluetooth joystick support
-
-https://github.com/sraccah/CyberDog_42 - GRPC based control, and voice support
-
-https://github.com/linzhibo/Cyberdog_utils - Centroid follower example
-
-https://github.com/zbwu/cyberdog_misc - includes bits of the motion controller (locomotion wrapper)
-
-https://github.com/zbwu/athena_motorcontrol 
-
-https://github.com/zbwu/athena_locomotion
-
-https://github.com/zbwu/athena_adapter
-
-https://github.com/zbwu/GD32_SPINE
-
-https://github.com/PiotrMachowski/Home-Assistant-custom-components-Xiaomi-Cloud-Map-Extractor
+https://github.com/Karlsx/CyberDog_Ctrl - grpc control<br>
+https://github.com/Sunshengjin/ds4_for_cyberdog - PS4 specific joystick support<br>
+https://github.com/cyh1231wp/cyberdog-joystick - generic bluetooth joystick support<br>
+https://github.com/sraccah/CyberDog_42 - GRPC based control, and voice support<br>
+https://github.com/linzhibo/Cyberdog_utils - Centroid follower example<br>
+https://github.com/zbwu/cyberdog_misc - includes bits of the motion controller (locomotion wrapper)<br>
+https://github.com/zbwu/athena_motorcontrol <br>
+https://github.com/zbwu/athena_locomotion<br>
+https://github.com/zbwu/athena_adapter<br>
+https://github.com/zbwu/GD32_SPINE<br>
+https://github.com/PiotrMachowski/Home-Assistant-custom-components-Xiaomi-Cloud-Map-Extractor<br>
 
 # Fixing rosdep
 
