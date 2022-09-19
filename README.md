@@ -784,6 +784,12 @@ Add distro "noetic"
 Add distro "rolling"
 updated cache in /home/mi/.ros/rosdep/sources.cache
 ```
-
-
+You can see it works 
+```
+mi@lubuntu:~/cyberdog_ws$ sudo rosdep fix-permissions
+Recursively changing ownership of ros home directory '/home/mi/.ros' to 'mi:mi' (current user)...
+Done.
+mi@lubuntu:~/cyberdog_ws$  rosdep install -i --from-path src --rosdistro foxy -y
+#All required rosdeps installed successfully
+```
 
