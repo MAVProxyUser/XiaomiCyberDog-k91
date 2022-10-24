@@ -1,6 +1,8 @@
 # XiaomiCyberDog-k91
 小米集团 XIaomi 铁蛋 CyberDog 仿生四足机器人 Bionic quadruped robot<br>
-Join "The Dog Pound animal control for Stray robot dogs" slack group: https://join.slack.com/t/robotdogs/shared_invite/zt-1fvixx89u-7T79~VxmDYdFSIoTnSagFQ<br>
+
+Looking for Quadruped friends? Join "The Dog Pound animal control for Stray robot dogs" slack group: <br>
+https://join.slack.com/t/robotdogs/shared_invite/zt-1fvixx89u-7T79~VxmDYdFSIoTnSagFQ<br>
 
 * [Archived Xiaomi CyberDog GitLab Project](#archived-xiaomi-cyberdog-gitlab-project)
 * [Active GitHub Project](#active-github-project)
